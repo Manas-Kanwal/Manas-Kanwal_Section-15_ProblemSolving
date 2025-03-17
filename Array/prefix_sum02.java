@@ -1,4 +1,4 @@
-package Array;
+
 // find the prefix sum from l to r in an array in which l and r are included 
 public class prefix_sum02 {
     static int sum(int left , int right , int [] arr ){
