@@ -1,4 +1,4 @@
-package Array;
+
 
 public class prefix_sum03 {
     static boolean part(int[]arr){
