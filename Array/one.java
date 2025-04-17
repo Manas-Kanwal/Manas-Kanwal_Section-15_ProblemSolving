@@ -23,7 +23,7 @@ public class one{
     }
 
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 1, 1, 1, 1, 4, 2, 3};
+        int[] arr = {1, 2, 3, 1, 1, 1, 1, 4, 8 ,9};
         int k = 6;
         System.out.println(sub(arr, k));  // Output: 4 (e.g., subarray [1,1,1,3])
     }
