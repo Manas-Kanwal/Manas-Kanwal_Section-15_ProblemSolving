@@ -26,6 +26,18 @@ public class  String443.Compression {
                     index++;
                 }
             }
+            /*
+             if(count > 1)
+            {
+                String st = Integer.toString(count);
+                char cha[] = st.toCharArray();
+                for(int j = 0 ; j < cha.length; j++)
+                {
+                    chars[index++] = cha[j];
+
+                } 
+            }
+             */
         }
         return index;
     }
