@@ -1,3 +1,4 @@
+package Linearsearch;
 public class LinearSearch02 {
     static int searchIdx(int arr[] , int idx , int target)
     {

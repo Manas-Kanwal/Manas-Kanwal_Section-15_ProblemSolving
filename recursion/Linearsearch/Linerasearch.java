@@ -1,3 +1,4 @@
+package Linearsearch;
 public class Linerasearch {
     
     static boolean Linearsearch(int arr [] , int target , int idx )
