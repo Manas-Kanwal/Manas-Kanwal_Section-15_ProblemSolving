@@ -1,3 +1,4 @@
+package Array;
 public class sumOfelementsInArray {
     static int add(int arr[] , int index )
     {   int n = arr.length;

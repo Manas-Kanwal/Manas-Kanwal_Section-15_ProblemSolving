@@ -1,3 +1,4 @@
+package Array;
 public class findMaxinArr {
     static int max(int arr[] , int idx)
     {   
