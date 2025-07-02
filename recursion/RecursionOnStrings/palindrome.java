@@ -11,11 +11,11 @@ public class palindrome {
         }
         char l = str.charAt(left);
         char r = str.charAt(right);
-        if(l!=r)
+        if(l!=r)//self work or Small work
         {
             return false ;
         }
-        return pal(str, left+1, right-1);
+        return pal(str, left+1, right-1);//recursion
 
         
     }
