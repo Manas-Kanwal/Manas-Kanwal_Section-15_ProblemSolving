@@ -1,4 +1,3 @@
-package HashMap;
 import java.util.*;
 
 public class ques01 {
@@ -31,6 +30,7 @@ public class ques01 {
             }
         }
         System.out.println(ans);
+        
 
     }
 }
