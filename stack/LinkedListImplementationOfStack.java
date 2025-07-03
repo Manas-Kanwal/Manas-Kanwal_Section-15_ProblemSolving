@@ -1,4 +1,4 @@
-package Array;
+package stack;
 
 public class LinkedListImplementationOfStack {
     static class node{
