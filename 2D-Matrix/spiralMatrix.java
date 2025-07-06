@@ -1,4 +1,4 @@
-public class spiral {
+public class spiralMatrix {
     static void spiral(int arr[][] , int col , int row ){
         int left = 0 ;
         int right = col -1;
