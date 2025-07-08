@@ -2,62 +2,65 @@ package stack.Question;
 import java.util.*;
 
 public class infix {
-    static int infixsol(String s) {
+
+    public static void main(String[] args) {
+        String s = "9-5+3*4/6";
         Stack<Integer> val = new Stack<>();
         Stack<Character> op = new Stack<>();
 
         for (int i = 0; i < s.length(); i++) {
             char ch = s.charAt(i);
-            int asci = (int) ch;
+            int ascii = (int) ch;
 
-            if (asci >= 48 && asci <= 57) {
-                val.push(asci - 48);
-            } else if (op.size() == 0) {
+            if (ascii >= 48 && ascii <= 57) {
+                val.push(ascii - 48);
+            } else if (op.isEmpty()) {
                 op.push(ch);
             } else {
                 if (ch == '+' || ch == '-') {
-                    while (!op.isEmpty()) {
+                    if (val.size() >= 2 && !op.isEmpty()) {
                         int val2 = val.pop();
                         int val1 = val.pop();
-                        char top = op.pop();
 
-                        if (top == '-') val.push(val1 - val2);
-                        else if (top == '+') val.push(val1 + val2);
-                        else if (top == '*') val.push(val1 * val2);
-                        else if (top == '/') val.push(val1 / val2);
+                        if (op.peek() == '-') val.push(val1 - val2);
+                        else if (op.peek() == '+') val.push(val1 + val2);
+                        else if (op.peek() == '*') val.push(val1 * val2);
+                        else if (op.peek() == '/') val.push(val1 / val2);
+
+                        op.pop();
                     }
                     op.push(ch);
                 } else if (ch == '*' || ch == '/') {
-                    while (!op.isEmpty() && (op.peek() == '*' || op.peek() == '/')) {
+                    if (val.size() >= 2 && !op.isEmpty()) {
                         int val2 = val.pop();
                         int val1 = val.pop();
-                        char top = op.pop();
 
-                        if (top == '*') val.push(val1 * val2);
-                        else if (top == '/') val.push(val1 / val2);
+                        if (op.peek() == '*') val.push(val1 * val2);
+                        else if (op.peek() == '/') val.push(val1 / val2);
+
+                        op.pop();
                     }
                     op.push(ch);
                 }
             }
         }
 
-        while (val.size() > 1 && !op.isEmpty()) {
+        while (val.size() >= 2 && !op.isEmpty()) {
             int val2 = val.pop();
             int val1 = val.pop();
-            char top = op.pop();
 
-            if (top == '+') val.push(val1 + val2);
-            else if (top == '-') val.push(val1 - val2);
-            else if (top == '*') val.push(val1 * val2);
-            else if (top == '/') val.push(val1 / val2);
+            if (op.peek() == '-') val.push(val1 - val2);
+            else if (op.peek() == '+') val.push(val1 + val2);
+            else if (op.peek() == '*') val.push(val1 * val2);
+            else if (op.peek() == '/') val.push(val1 / val2);
+
+            op.pop();
         }
 
-        return val.peek();
-    }
-
-    public static void main(String[] args) {
-        String s = "9-5+3*4/6";
-        System.out.println(infixsol(s));  // Expected output: 6
+        if (!val.isEmpty()) {
+            System.out.println(val.peek());
+        } else {
+            System.out.println("Error: Stack is empty.");
+        }
     }
 }
-
